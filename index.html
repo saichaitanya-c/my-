@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Level Indicator</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Firebase v8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- CountUp.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js"></script>
+</head>
+<body>
+    <div class="card">
+        <h2>Battery Status</h2>
+        <div class="battery-container">
+            <div id="battery" class="battery">
+                <div class="acid-container">
+                    <div class="acid">
+                        <div id="level" class="fill">
+                            <div class="waves">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     viewBox="0 24 150 28"
+                                     preserveAspectRatio="none">
+                                    <defs>
+                                        <path id="gentle-wave"
+                                              d="M-160 44c30 0 
+                                                 58-18 88-18s
+                                                 58 18 88 18 
+                                                 58-18 88-18 
+                                                 58 18 88 18
+                                                 v44h-352z" />
+                                    </defs>
+                                    <g class="parallax">
+                                        <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2"/>
+                                        <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1"/>
+                                        <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa"/>  
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="percentage">
+            <i id="icon" class="fas fa-plug"></i><span id="percentage">0</span>%
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
